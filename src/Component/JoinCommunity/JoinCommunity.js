@@ -1,24 +1,30 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 const JoinCommunity = () => {
   return (
-    <section className="py-16 bg-green-100">
-      <div className="text-center max-w-xl mx-auto">
-        <h2 className="text-3xl font-bold mb-4">Rejoignez la communauté !</h2>
-        <p className="text-lg mb-6">Conseils, opportunités et collaborations à recevoir dans votre boîte mail.</p>
-        <form className="flex flex-col sm:flex-row justify-center items-center">
+    <section className="relative py-12 bg-lime-100 flex justify-center items-center">
+     <div className="absolute left-0 top-1/2 hidden md:flex transform rotate-90 -translate-y-1/2 bg-black text-white py-2 px-4 rounded-full flex items-center">
+        <div className="flex flex-col items-center transform origin-bottom-left">
+          <FontAwesomeIcon icon={faEnvelope} className="mb-2" />
+          <span className="text-sm">Newsletter</span>
+        </div>
+      </div>
+      <div className="text-center">
+        <h1 className="text-3xl mb-4">Rejoins la communauté !</h1>
+        <p className="mb-6">Conseils, opportunités et collaboration directement dans votre boîte mail.</p>
+        <div className="flex justify-center bg-black rounded-full px-2 py-2 items-center">
           <input 
             type="email" 
-            placeholder="Entrez votre adresse mail ici" 
-            className="p-2 w-full sm:w-auto border border-gray-300 rounded-l-lg sm:rounded-r-none sm:flex-1 mb-4 sm:mb-0" 
+            placeholder="ton adresse mail ici." 
+            className="bg-black text-white items-center focus:outline-none"
           />
-          <button 
-            type="submit" 
-            className="bg-green-500 text-white py-2 px-6 rounded-r-lg sm:rounded-l-none transition-colors duration-300 hover:bg-green-600"
-          >
-            S'inscrire
+          <button className="text-white flex items-center">
+            <FontAwesomeIcon icon={faCheckCircle} className="ml-1" />
           </button>
-        </form>
+        </div>
       </div>
     </section>
   );

@@ -30,11 +30,11 @@ const companies = [
 const Trust = () => {
   return (
     <section className="py-16 text-center bg-gray-50">
-      <h2 className="text-3xl font-bold mb-8">Ils nous font confiance.</h2>
-      <div className="flex justify-center space-x-8">
+      <h2 className="text-3xl mb-8">Ils nous font confiance.</h2>
+      <div className="flex justify-evenly space-x-8">
         {companies.map(company => (
           <div key={company.id} className="flex items-center justify-center">
-            <img src={company.logo} alt={company.name} className="h-16" />
+            <img src={company.logo} alt={company.name} className="h-10 flex justify-evenly" />
           </div>
         ))}
       </div>

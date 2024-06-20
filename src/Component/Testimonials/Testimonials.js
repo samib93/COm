@@ -32,14 +32,14 @@ const Testimonials = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
   };
   return (
     <section className="py-16">
-      <h2 className="text-3xl font-bold text-center mb-8">Ils parlent de nous.</h2>
+      <h2 className="text-3xl text-center mb-8">Ils parlent de nous.</h2>
       <div className="flex justify-center space-x-8">
       <Slider {...settings} className="w-2/3 mx-auto">
         {testimonials.map((testimonial, index) => (
