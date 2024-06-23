@@ -34,7 +34,7 @@ const Gallery = () => {
           </div>
         </div>
         <div className="relative flex justify-center items-center">
-          <div className="relative w-full h-full flex justify-center items-center">
+          <div className="relative w-full  h-full flex justify-center items-center">
             <div className="relative">
               <img src={images[0].src} alt={images[0].alt} className="rounded-lg shadow-lg" />
               <img src={images[1].src} alt={images[1].alt} className="absolute top-0 right-0 w-1/4 rounded-lg shadow-lg transform translate-x-1/4 -translate-y-1/4" />
