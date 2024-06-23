@@ -5,6 +5,7 @@ import Ellispe2 from '../../assets/img/ellipse14.png'
 import Ellispe3 from '../../assets/img/ellipse16.png'
 import Premier from '../../assets/img/propose1.png'
 import Play from '../../assets/img/play.png'
+import fleche from '../../assets/img/double_arrow.png';
 
 const SeedSection = () => {
   const images = [
@@ -17,25 +18,30 @@ const SeedSection = () => {
 
   return (
     <section className="text-center py-16 bg-grey-500">
-        <h2 className="text-3xl mb-8">Prenez-en de la graine</h2>
-        <div className="flex justify-center items-center flex-wrap relative">
-          <div className="relative w-full h-full flex justify-center items-center">
-          <div className="relative">
-           <img src={BgHeader} alt="Field" className="rounded-lg shadow-lg w-96 h-96 object-cover" />
-           <button className="absolute inset-0 flex justify-center items-center">
-             <img src={Play} alt="Play Button" className="rounded w-10 h-10" />
-           </button>
-          </div>
-            <div className="absolute w-20 h-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[1].src})`, top: '0%', left: '10%' }} alt={images[1].alt}></div>
-            <div className="absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[2].src})`, top: '0%', right: '10%' }} alt={images[2].alt}></div>
-            <div className="absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[3].src})`, bottom: '0%', left: '10%' }} alt={images[3].alt}></div>
-            <div className="absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[4].src})`, bottom: '0%', right: '10%' }} alt={images[4].alt}></div>
-          </div>
-        </div>
-        <div className="absolute justify-content-end right-10 text-right mt-8">
-          <button className="bg-gray-100 text-black text-start py-2 px-4 rounded-full w-72 shadow-lg hover:bg-lime-100">Voir les vidéos</button>
-        </div>
-    </section>
+  <h2 className="text-4xl font-raleway mb-8">Prenez-en de la graine</h2>
+  <div className="flex justify-center items-center flex-wrap relative">
+    <div className="relative w-full flex justify-center items-center">
+      <div className="relative flex justify-center">
+        <img src={BgHeader} alt="Field" className="rounded-lg shadow-lg w-52 h-52 sm:w-72 sm:h-72 lg:w-full lg:h-96" />
+        <button className="absolute inset-0 flex justify-center items-center">
+          <img src={Play} alt="Play Button" className="rounded w-10 h-10 sm:w-16 sm:h-16 lg:w-24 lg:h-24" />
+        </button>
+      </div>
+      <div className="hidden md:block absolute w-16 h-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[1].src})`, top: '0%', left: '10%' }} alt={images[1].alt}></div>
+      <div className="hidden md:block absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-32 lg:h-32 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[3].src})`, top: '0%', right: '10%' }} alt={images[3].alt}></div>
+      <div className="hidden md:block absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-28 lg:h-28 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[2].src})`, bottom: '0%', left: '10%'  }} alt={images[2].alt}></div>
+      <div className="hidden md:block absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[4].src})`, bottom: '10%', right: '15%' }} alt={images[4].alt}></div>
+    </div>
+  </div>
+  <div className="flex justify-end mt-8">
+  <button className="bg-gray-100 text-black text-base font-raleway py-2 px-4 rounded-full w-60 shadow-lg hover:bg-lime-100 flex items-center border border-black mr-20">
+    voir les vidéos
+    <div className="bg-black w-8 h-8 ml-16 rounded-full flex items-center justify-center">
+      <img src={fleche} alt="doublearrow" className="w-4 h-4 filter brightness-0 invert" />
+    </div>
+  </button>
+</div>
+</section>
   );
 };
 
