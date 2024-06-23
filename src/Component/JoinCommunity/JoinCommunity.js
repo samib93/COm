@@ -6,9 +6,9 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 const JoinCommunity = () => {
   return (
     <section className="relative py-12 bg-lime-100 flex justify-center items-center">
-    <div className="absolute left-0 top-1/2 hidden md:flex transform -rotate-90 -translate-y-1/2 bg-black text-white py-2 px-4 rounded-xl flex items-center w-40 h-12 -left-12">
+   <div className="absolute left-0 top-1/2 hidden md:flex transform -rotate-90 -translate-y-1/2 bg-black text-white py-2 px-4 rounded-xl flex items-center w-40 h-12 -left-12">
   <div className="flex items-center">
-    <span className="font-raleway text-sm">Newsletter</span>
+    <span className="text-sm">Newsletter</span>
     <FontAwesomeIcon icon={faEnvelope} className="ml-2" />
   </div>
 </div>
