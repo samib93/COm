@@ -18,10 +18,11 @@ const Header = () => {
         {/* Top Navigation */}
         <div className="hidden md:flex space-x-4 flex justify-between items-center">
           <img src={Logo} alt="Fresh Logo" className="h-5" />
-          <nav className="flex space-x-6">
+          <nav className="flex space-x-4">
             <a href="#our-products" className="text-black hover:text-lime-500 transition">Nos Produits</a>
             <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
             <a href="#contact" className="text-black hover:text-lime-500 transition">Contact</a>
+            <a href="/login" className="text-black hover:text-lime-500 transition">Compte</a>
             <a href="/blog" className="text-black hover:text-lime-500 transition">Blog</a>
           </nav>
           <a href="#sign-up" className="bg-lime-500 text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
@@ -32,11 +33,13 @@ const Header = () => {
             </button>
         </div>
         {isOpen && (
-        <div className="md:hidden h-full bg-white">
+        <div className="md:hidden h-full bg-[#020F14]">
           <nav className="grid grid-rows-4">
-            <a href="#our-products" className="px-4 text-black hover:text-lime-500 transition">Nos Produits</a>
-            <a href="#about-us" className="px-4 text-black hover:text-lime-500 transition">À Propos</a>
-            <a href="#contact" className="px-4 text-black hover:text-lime-500 transition">Contact</a>
+            <a href="#our-products" className="px-4 text-white hover:text-lime-500 transition">Nos Produits</a>
+            <a href="#about-us" className="px-4 text-white hover:text-lime-500 transition">À Propos</a>
+            <a href="#contact" className="px-4 text-white hover:text-lime-500 transition">Contact</a>
+            <a href="/login" className="px-4 text-white hover:text-lime-500 transition">Compte</a>
+            <a href="/blog" className="px-4 text-white hover:text-lime-500 transition">Blog</a>
             <a href="#sign-up" className="bg-lime-500 text-black px-4 py-2 rounded-full w-64 shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
           </nav>
         </div>
@@ -47,7 +50,7 @@ const Header = () => {
           <p className="text-lg md:text-xl mb-6">
             La solution pour accéder à des produits locaux en entreprise. Savourez la qualité. Vivez la fraîcheur.
           </p>
-          <a href="#sign-up" className="bg-black text-white px-4 py-2 rounded-full shadow hover:bg-black-500 transition">Inscrivez-vous</a>
+          <a href="/compte" className="bg-black text-white px-4 py-2 rounded-full shadow hover:bg-black-500 transition">Inscrivez-vous</a>
         </div>
         <a href="#scroll-down" className="absolute bottom-10 right-10">
             <svg className="w-8 h-8 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

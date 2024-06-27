@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import ImgSignup from '../../../assets/img/signup.png'
+import BgBlog from '../../../assets/img/BgBlog.png';
 import Logo from '../../../assets/img/logohead.png'
 
-const Signup = () => {
+const Inscription = () => {
   const [profession, setProfession] = useState('');
   const [nom, setNom] = useState('');
   const [prenom, setPrenom] = useState('');
@@ -95,9 +95,12 @@ const Signup = () => {
                 className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
               >
                 <option value="">Sélectionnez votre profession</option>
-                <option value="Eleveur">Eleveurs</option>
-                <option value="Maraichers">Maraichers</option>
-                <option value="Fromagers">Fromagers</option>
+                <option value="Chef happiness officier">Chef happiness officier</option>
+                <option value="Feel good manager">Feel good manager</option>
+                <option value="Directeur général RH">Directeur général RH</option>
+                <option value="Responsable Marketing">Responsable Marketing</option>
+                <option value="Financier">Financier</option>
+                <option value="Autres">Autres</option>
               </select>
             </div>
             <div>
@@ -181,11 +184,11 @@ const Signup = () => {
 
         {/* Image */}
         <div className="hidden md:block md:w-1/2">
-          <img src={ImgSignup} alt="Plantation" className="object-cover rounded-lg shadow-lg" />
+          <img src={BgBlog} alt="Plantation" className="object-cover rounded-lg shadow-lg" />
         </div>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default Inscription;

@@ -21,9 +21,10 @@ const JoinCommunity = () => {
             placeholder="ton adresse mail ici." 
             className="bg-black text-white items-center focus:outline-none"
           />
-          <button className="text-white flex items-center">
+          <button className="p-2 bg-white text-black rounded-full h-10 w-10 hover:bg-gray-800">✓</button>
+          {/* <button className="text-white flex items-center">
             <FontAwesomeIcon icon={faCheckCircle} className="ml-1" />
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

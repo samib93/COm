@@ -27,8 +27,22 @@ const Values = () => {
     <section className="py-12 place-items-center bg-white">
       <div className="container items-center mx-auto px-4">
         <h1 className="text-3xl text-center mb-8">Les Valeurs</h1>
-        <div className="grid grid-cols-1 items-center md:grid-cols-3 gap-16 sm:grid-cols-1 md:grid-cols-1">
-        <Slider {...settings} className="w-2/3 mx-auto">
+        <div className="flex hidden md:grid text-center grid grid-cols-1 items-center md:grid-cols-3 gap-16 sm:grid-cols-1">
+          {values.map((value, index) => (
+            <div key={index} className="bg-lime-100 p-6 rounded-lg shadow-lg">
+              <div className="flex items-center mb-4 gap-5">
+                <h3 className="text-xl bg-white px-4 py-1 w-full rounded-full font-bold">{value.title}</h3>
+                <span className="bg-white text-black rounded-full px-3 py-1 text-sm font-semibold mr-2">
+                <FontAwesomeIcon icon={value.icon} />
+                </span>
+              </div>
+              <p className="text-gray-700">{value.description}</p>
+            </div>
+          ))}
+        </div>
+        {/* Deuxième Slides */}
+        <div className="flex md:hidden text-center grid grid-cols-1 items-center md:grid-cols-3 gap-16 sm:grid-cols-1">
+        <Slider {...settings} className="w-2/3 mx-auto items-center">
           {values.map((value, index) => (
             <div key={index} className="bg-lime-100 p-6 rounded-lg shadow-lg">
               <div className="flex items-center mb-4 gap-5">
