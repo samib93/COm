@@ -5,6 +5,7 @@ import Ellispe2 from '../../assets/img/ellipse14.png'
 import Ellispe3 from '../../assets/img/ellipse16.png'
 import Premier from '../../assets/img/propose1.png'
 import Play from '../../assets/img/play.png'
+import fleche from '../../assets/img/double_arrow.png';
 
 const SeedSection = () => {
   const images = [
