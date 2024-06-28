@@ -6,18 +6,18 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 const Values = () => {
   const values = [
     { title: 'Qualité', icon: faStar, description: 'Nous nous engageons à fournir des produits de haute qualité.' },
+    { title: 'Local', icon: faStar, description: 'Nous soutenons les producteurs locaux et l\'économie locale.' },
     { title: 'Durabilité', icon: faStar, description: 'Nous adoptons des pratiques respectueuses de l\'environnement.' },
-    { title: 'Transparence', icon: faStar, description: 'Assurer la traçabilité et la transparence des produits pour les consommateurs ' },
-    { title: 'Transmission', icon: faStar, description: 'Sensibiliser les consommateurs, y compris les enfants, à l\'alimentation locale et durable' },
-    { title: 'Proximité', icon: faStar, description: 'Sensibiliser les consommateurs, y compris les enfants, à l\'alimentation locale et durable' },
-    { title: 'Communauté', icon: faStar, description: 'Renforcer les liens entre producteurs, entreprises et consommateurs pour créer un réseau solidaire' },
+    { title: 'Innovation', icon: faStar, description: 'Nous cherchons constamment à innover pour le mieux.' },
+    { title: 'Confiance', icon: faStar, description: 'Nous construisons des relations basées sur la confiance.' },
+    { title: 'Engagement', icon: faStar, description: 'Nous sommes engagés à répondre aux besoins de nos clients.' },
   ];
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 1 ,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -56,26 +56,6 @@ const Values = () => {
           ))}
           </Slider>
         </div>
-
-        {/* Affichage en grille 3x3 sur écrans larges (PC) avec Flexbox */}
-        {/* <div className="hidden md:flex md:flex-wrap justify-center">
-          {values.map((value, index) => (
-            <div key={index} className="bg-lime-100 p-6 rounded-lg shadow-lg w-1/3 md:w-72 mx-4 my-4 text-center">
-              <div className="flex items-center mb-4 justify-center">
-                <span className="bg-white text-black rounded-full p-2 mr-3">
-                  <FontAwesomeIcon icon={value.icon} />
-                </span>
-                <h3 className="text-xl  font-raleway bg-white px-4 py-1 w-full rounded-full ">{value.title}</h3>
-              </div>
-              <p className="text-gray-700">{value.description}</p>
-            </div>
-          ))} */}
-          
-          {/* Ajouter des éléments vides pour remplir la dernière ligne si nécessaire */}
-          {/* {values.length % 3 !== 0 && (
-            <div className="w-1/3 md:w-72 mx-4 my-4"></div>
-          )}
-        </div> */}
       </div>
     </section>
   );
