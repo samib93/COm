@@ -23,7 +23,10 @@ function App() {
         <Route path="/compte" element={<Compte />} />
         <Route path="/details-article/:id" element={<ArticleDetails />} />
       </Routes>
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGQ64M6B"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </Router>
+          
   );
 }
 
