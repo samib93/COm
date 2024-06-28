@@ -58,7 +58,7 @@ const Values = () => {
         </div>
 
         {/* Affichage en grille 3x3 sur écrans larges (PC) avec Flexbox */}
-        <div className="hidden md:flex md:flex-wrap justify-center">
+        {/* <div className="hidden md:flex md:flex-wrap justify-center">
           {values.map((value, index) => (
             <div key={index} className="bg-lime-100 p-6 rounded-lg shadow-lg w-1/3 md:w-72 mx-4 my-4 text-center">
               <div className="flex items-center mb-4 justify-center">
@@ -69,13 +69,13 @@ const Values = () => {
               </div>
               <p className="text-gray-700">{value.description}</p>
             </div>
-          ))}
+          ))} */}
           
           {/* Ajouter des éléments vides pour remplir la dernière ligne si nécessaire */}
-          {values.length % 3 !== 0 && (
+          {/* {values.length % 3 !== 0 && (
             <div className="w-1/3 md:w-72 mx-4 my-4"></div>
           )}
-        </div>
+        </div> */}
       </div>
     </section>
   );
