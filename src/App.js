@@ -10,6 +10,8 @@ import ArticleDetails from './Component/Page/ArticleDetails/ArticleDetails';
 import Login from './Component/Page/Connexion/Connexion';
 import Compte from './Component/Page/Compte/Compte';
 import Inscription from './Component/Page/Inscription/Inscription';
+import Leaflet from './Component/Page/leaflet/leaflet';
+import MapComponent from './Component/Page/leaflet/MapComponent';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/compte" element={<Compte />} />
         <Route path="/details-article/:id" element={<ArticleDetails />} />
+        <Route path="/products" element={<Leaflet />} />
+        <Route path="/map" element={<MapComponent />} />
       </Routes>
     </Router>
   );

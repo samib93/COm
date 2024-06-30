@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 import BgImg from '../../assets/img/headerbg.png';
 import Logo from '../../assets/img/logohead.png';
@@ -21,7 +22,7 @@ const Header = () => {
         <div className="hidden md:flex space-x-4 flex justify-between items-center">
           <img src={Logo} alt="Fresh Logo" className="h-5" />
           <nav className="flex space-x-4">
-            <a href="#our-products" className="text-black hover:text-lime-500 transition">Nos Produits</a>
+          <Link to="/products" className="text-black hover:text-lime-500 transition">Nos Produits</Link>
             <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
             <a href="#contact" className="text-black hover:text-lime-500 transition">Contact</a>
             <a href="/login" className="text-black hover:text-lime-500 transition">Compte</a>
