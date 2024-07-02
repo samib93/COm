@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import Markerblack from '../../../assets/img/marker-icon-2x-black.png';
 
-// Supprimer les icônes par défaut
+
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -13,7 +13,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 });
 
-// Définir une icône personnalisée pour les marqueurs aléatoires
+
 const blackIcon = new L.Icon({
   iconUrl: Markerblack, 
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
@@ -37,8 +37,7 @@ const RecenterAutomatically = ({ position }) => {
 const generateRandomPosition = (position, radius) => {
   const y0 = position[0];
   const x0 = position[1];
-  const rd = radius / 111300; // ~111300 meters in one degree
-
+  const rd = radius / 111300; 
   const u = Math.random();
   const v = Math.random();
 
@@ -84,7 +83,7 @@ const MapComponent = () => {
   }, [position]);
 
   return (
-    <MapContainer className='rounded-md ml-20' center={position || [51.505, -0.09]} zoom={10} style={{ height: '80vh', width: '65%' }}>
+    <MapContainer className='rounded-md ml-20 lg:ml-20' center={position || [51.505, -0.09]} zoom={10} style={{ height: '80vh', width: '65%' }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -99,7 +98,7 @@ const MapComponent = () => {
       )}
       {randomMarkers.map((markerPos, index) => (
         <Marker key={index} position={markerPos} icon={blackIcon}>
-          <Popup>Point aléatoire {index + 1}</Popup>
+          <Popup>Producteur {index + 1}</Popup>
         </Marker>
       ))}
     </MapContainer>

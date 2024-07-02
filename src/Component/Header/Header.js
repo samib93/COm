@@ -28,7 +28,7 @@ const Header = () => {
             <a href="/login" className="text-black hover:text-lime-500 transition">Compte</a>
             <a href="/blog" className="text-black hover:text-lime-500 transition">Blog</a>
           </nav>
-          <a href="#sign-up" className="bg-lime-500 text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
+          <a href="#sign-up" className="bg-customGreen text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-800 hover:text-gray-600 focus:outline-none">
