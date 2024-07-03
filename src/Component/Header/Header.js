@@ -21,7 +21,7 @@ const Header = () => {
         {/* Top Navigation */}
         <div className="hidden md:flex space-x-4 flex justify-between items-center">
           <img src={Logo} alt="Fresh Logo" className="h-5" />
-          <nav className="flex space-x-4">
+          <nav className="flex space-x-10 ml-20">
           <Link to="/products" className="text-black hover:text-lime-500 transition">Nos Produits</Link>
             <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
             <a href="#contact" className="text-black hover:text-lime-500 transition">Contact</a>
