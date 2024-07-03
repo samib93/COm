@@ -19,11 +19,12 @@ const Header = () => {
         <div className="hidden md:flex space-x-4 flex justify-between items-center">
           <img src={Logo} alt="Fresh Logo" className="h-5" />
           <nav className="flex space-x-4">
-            <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition">Nos Produits</a>
+            <a href="/products" className="text-black hover:text-lime-500 transition">Nos Produits</a>
             <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
             <a href="#contact" className="text-black hover:text-lime-500 transition">Contact</a>
             <a href="/login" className="text-black hover:text-lime-500 transition">Compte</a>
             <a href="/blog" className="text-black hover:text-lime-500 transition">Blog</a>
+            <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition">Nos producteurs</a>
           </nav>
           <a href="/partanariat" className="bg-lime-500 text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
         </div>

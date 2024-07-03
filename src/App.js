@@ -12,6 +12,9 @@ import Compte from './Component/Page/Compte/Compte';
 import Inscription from './Component/Page/Inscription/Inscription';
 import Partanariat from './Component/Page/Partanariat/Partanariat';
 import NosProducteurs from './Component/Page/NosProducteurs/NosProducteurs';
+import Leaflet from './Component/Page/Leaflet/Leaflet';
+import MapComponent from './Component/Page/Leaflet/MapComponent';
+
 
 function App() {
   return (
@@ -26,6 +29,8 @@ function App() {
         <Route path="/compte" element={<Compte />} />
         <Route path="/details-article/:id" element={<ArticleDetails />} />
         <Route path="/nos-producteurs" element={<NosProducteurs />} />
+        <Route path="/products" element={<Leaflet />} />
+        <Route path="/map" element={<MapComponent />} />
       </Routes>
     </Router>
   );

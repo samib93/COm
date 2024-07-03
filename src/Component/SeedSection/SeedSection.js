@@ -5,6 +5,7 @@ import Ellispe2 from '../../assets/img/ellipse14.png'
 import Ellispe3 from '../../assets/img/ellipse16.png'
 import Premier from '../../assets/img/propose1.png'
 import Play from '../../assets/img/play.png'
+import VideoFile from '../../assets/img/video_explainer.mp4';
 
 const SeedSection = () => {
   const images = [
@@ -17,22 +18,21 @@ const SeedSection = () => {
 
   return (
     <section className="text-center py-16 bg-grey-500">
-        <h2 className="text-3xl mb-8">Prenez-en de la graine</h2>
-        <div className="flex justify-center items-center flex-wrap relative">
-          <div className="relative w-full h-full flex justify-center items-center">
+      <h2 className="text-3xl mb-8">Prenez-en de la graine</h2>
+      <div className="flex justify-center items-center flex-wrap relative">
+        <div className="relative w-full h-full flex justify-center items-center">
           <div className="relative">
-           <img src={BgHeader} alt="Field" className="rounded-lg shadow-lg w-96 h-96 object-cover" />
-           <button className="absolute inset-0 flex justify-center items-center">
-             <img src={Play} alt="Play Button" className="rounded w-10 h-10" />
-           </button>
+            <video className="rounded-lg shadow-lg w-full h-96 object-cover" controls poster={BgHeader}>
+              <source src={VideoFile} type="video/mp4"/>
+            </video>
           </div>
-            <div className="absolute w-20 h-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[1].src})`, top: '0%', left: '10%' }} alt={images[1].alt}></div>
-            <div className="absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[2].src})`, top: '0%', right: '10%' }} alt={images[2].alt}></div>
-            <div className="absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[3].src})`, bottom: '0%', left: '10%' }} alt={images[3].alt}></div>
-            <div className="absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[4].src})`, bottom: '0%', right: '10%' }} alt={images[4].alt}></div>
-          </div>
+          <div className="hidden md:block absolute w-20 h-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[1].src})`, top: '0%', left: '10%' }} alt={images[1].alt}></div>
+          <div className="hidden md:block absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[2].src})`, top: '0%', right: '10%' }} alt={images[2].alt}></div>
+          <div className="hidden md:block absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[3].src})`, bottom: '0%', left: '10%' }} alt={images[3].alt}></div>
+          <div className="hidden md:block absolute w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-cover bg-center rounded-full shadow-lg" style={{ backgroundImage: `url(${images[4].src})`, bottom: '0%', right: '10%' }} alt={images[4].alt}></div>
         </div>
-        <div className="absolute justify-content-end right-10 text-right mt-8">
+      </div>
+      <div className="absolute justify-content-end right-10 text-right mt-8">
           <button className="bg-gray-100 border-2 border-black tex-center text-black text-start py-2 px-4 rounded-full w-72 shadow-lg hover:bg-lime-100">Voir les vidéos</button>
         </div>
     </section>

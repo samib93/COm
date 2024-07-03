@@ -4,7 +4,17 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customGreen: '#D0E608',
+        customPaleGreenYellow:'#F4FBD2',
+      },
+      fontFamily: {
+        raleway: ['Raleway', 'sans-serif'],
+        florensa: ['Florensa Regular', 'sans-serif'],
+
+      },
+    },
   },
   plugins: [],
 }
