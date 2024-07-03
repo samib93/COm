@@ -29,21 +29,16 @@ const companies = [
 
 const Trust = () => {
   return (
-<section className="py-16 text-center bg-gray-50">
-  <h2 className="text-3xl font-raleway mb-8">Ils nous font confiance.</h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
-    {companies.map(company => (
-      <div key={company.id} className="flex justify-center">
-        <img
-          src={company.logo}
-          alt={company.name}
-          className="h-10 filter grayscale"
-          style={{ filter: 'grayscale(100%)' }}
-        />
+    <section className="py-16 text-center bg-gray-50">
+      <h2 className="text-3xl mb-8">Ils nous font confiance.</h2>
+      <div className="flex justify-evenly space-x-8">
+        {companies.map(company => (
+          <div key={company.id} className="flex items-center justify-center">
+            <img src={company.logo} alt={company.name} className="h-10 flex justify-evenly" />
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-</section>
+    </section>
   );
 };
 

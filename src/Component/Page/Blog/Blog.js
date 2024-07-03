@@ -4,8 +4,10 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../../assets/img/logohead.png'
 import BgBlog from '../../../assets/img/BgBlog.png';
 import Famer from '../../../assets/img/propose1.png';
-import { db } from '../../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
+import { auth, db } from '../../../firebase';
+import { doc, setDoc } from 'firebase/firestore';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +15,9 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 const Blog = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [articles, setArticles] = useState([]);
+  const [email, setEmail] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -31,8 +36,26 @@ const Blog = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+
+      await setDoc(doc(db, 'newsletter'), {
+        email,
+      });
+      alert("abonnement réussi avec succès !!!")
+
+      navigate('/'); // Redirigez vers la page d'accueil ou la page de connexion après l'inscription
+    } catch (error) {
+      console.error("Erreur lors de lors: ", error);
+    }
+  };
+
+
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-gray-100 min-h-screen">
       {/* Header */}
       <header className="relative bg-cover bg-center h-screen rounded-b-2xl overflow-hidden" style={{ backgroundImage: `url(${BgBlog})` }}>
       <div className="absolute inset-0 bg-black opacity-0"></div>
@@ -44,11 +67,11 @@ const Blog = () => {
           </a>
           <nav className="flex space-x-4">
             <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
-            <a href="#our-products" className="text-black hover:text-lime-500 transition">Nos Producteurs</a>
+            <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition">Nos Producteurs</a>
             <a href="/compte" className="text-black hover:text-lime-500 transition">Compte</a>
             {/* <a href="/blog" className="text-black hover:text-lime-500 transition">Blog</a> */}
           </nav>
-          <a href="#sign-up" className="bg-lime-500 text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
+          <a href="/partanariat" className="bg-lime-500 text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
         </div>
         <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-800 hover:text-gray-600 focus:outline-none">
@@ -59,9 +82,9 @@ const Blog = () => {
         <div className="md:hidden h-full bg-white">
           <nav className="grid grid-rows-4">
             <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
-            <a href="#our-products" className="text-black hover:text-lime-500 transition">Nos Producteurs</a>
+            <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition">Nos Producteurs</a>
             <a href="#compte" className="text-black hover:text-lime-500 transition">Compte</a>
-            <a href="#sign-up" className="bg-lime-500 text-black px-4 py-2 rounded-full w-64 shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
+            <a href="/partanariat" className="bg-lime-500 text-black px-4 py-2 rounded-full w-64 shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
           </nav>
         </div>
       )}
@@ -84,7 +107,7 @@ const Blog = () => {
       {/* Main Content */}
       <main className="container mx-auto p-4">
         {/* Intro Section */}
-        <section className="bg-[#F6F6F6] rounded-[30px] shadow-lg p-6 mb-8">
+        <section className="bg-gray-300 rounded-lg shadow-lg p-6 mb-8">
           <div className="md:flex items-center">
             <div className="md:w-2/3">
             <div className="flex items-center mb-4">
@@ -110,10 +133,17 @@ const Blog = () => {
             {/* Article Cards */}
             {articles.map(article => (
               <Link to={`/details-article/${article.id}`}>
-              <div key={article.id} className="bg-black text-white p-6 rounded-[30px] shadow-lg">
-                <span className="bg-[#D0E608] text-black px-2 py-1 rounded-full">L'article</span>
+              <div key={article.id} className="bg-black break-words text-wrap text-white p-6 rounded-lg shadow-lg">
+                <span className="bg-yellow-400 text-black px-2 py-1 rounded">L'article</span>
                 <h3 className="text-xl font-bold mt-4">{article.title}</h3>
-                <p className="text-gray-300 mt-2">{article.description}</p>
+                <p className="grid grid-cols-2 gap-4 text-gray-300 mt-2">
+                  <div className="col-start-1 col-end-3">
+                  {article.description}
+                  </div>
+                  {/* <div className="md:flex md:1/3 mt-4 col-end-7 col-span-2">
+                     <img className="text-2xl h-56 rounded-lg text-gray-600" src={article.imageUrl}/>
+                  </div> */}
+                </p>
                 
               </div>
               </Link>
@@ -146,17 +176,19 @@ const Blog = () => {
       <div className="text-center">
         <h1 className="text-3xl mb-4">Rejoins la communauté !</h1>
         <p className="mb-6">Conseils, opportunités et collaboration directement dans votre boîte mail.</p>
-        <div className="flex justify-center bg-black rounded-full px-2 py-2 items-center">
+        <form onSubmit={handleSubmit} className="flex justify-center bg-black rounded-full px-2 py-2 items-center">
           <input 
             type="email" 
             placeholder="ton adresse mail ici." 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="bg-black text-white items-center focus:outline-none"
           />
           <button className="p-2 bg-white text-black rounded-full h-10 w-10 hover:bg-gray-800">✓</button>
           {/* <button className="text-white flex items-center">
             <FontAwesomeIcon icon={faCheckCircle} className="ml-1" />
           </button> */}
-        </div>
+        </form>
       </div>
     </section>
 

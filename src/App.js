@@ -10,6 +10,8 @@ import ArticleDetails from './Component/Page/ArticleDetails/ArticleDetails';
 import Login from './Component/Page/Connexion/Connexion';
 import Compte from './Component/Page/Compte/Compte';
 import Inscription from './Component/Page/Inscription/Inscription';
+import Partanariat from './Component/Page/Partanariat/Partanariat';
+import NosProducteurs from './Component/Page/NosProducteurs/NosProducteurs';
 
 function App() {
   return (
@@ -19,14 +21,13 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/inscription" element={<Inscription />} />
+        <Route path="/partanariat" element={<Partanariat />} />
         <Route path="/login" element={<Login />} />
         <Route path="/compte" element={<Compte />} />
         <Route path="/details-article/:id" element={<ArticleDetails />} />
+        <Route path="/nos-producteurs" element={<NosProducteurs />} />
       </Routes>
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGQ64M6B"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </Router>
-          
   );
 }
 

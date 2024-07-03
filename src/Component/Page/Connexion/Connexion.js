@@ -50,9 +50,9 @@ const Login = () => {
         </div>
         <nav className="hidden md:flex space-x-4">
           <a href="#a-propos" className="text-gray-800 hover:text-green-600">à propos</a>
-          <a href="#nos-producteurs" className="text-gray-800 hover:text-green-600">nos producteurs</a>
+          <a href="nos-producteurs" className="text-gray-800 hover:text-green-600">nos producteurs</a>
           <a href="/login" className="text-gray-800 hover:text-green-600">compte</a>
-          <a href="#partenariat" className="bg-lime-500 text-black px-4 py-2 rounded-full hover:bg-lime-600">FAIRE UN PARTENARIAT</a>
+          <a href="/partanariat" className="bg-lime-500 text-black px-4 py-2 rounded-full hover:bg-lime-600">FAIRE UN PARTENARIAT</a>
         </nav>
         <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-800 hover:text-gray-600 focus:outline-none">
@@ -62,9 +62,9 @@ const Login = () => {
         {isOpen && (
         <nav className="md:hidden h-full bg-white grid grid-rows-4">
           <a href="#a-propos" className="text-gray-800 hover:text-green-600">à propos</a>
-          <a href="#nos-producteurs" className="text-gray-800 hover:text-green-600">nos producteurs</a>
+          <a href="nos-producteurs" className="text-gray-800 hover:text-green-600">nos producteurs</a>
           <a href="/login" className="text-gray-800 hover:text-green-600">compte</a>
-          <a href="#partenariat" className="bg-lime-500 text-black px-4 py-2 rounded-full hover:bg-lime-600">FAIRE UN PARTENARIAT</a>
+          <a href="/partanariat" className="bg-lime-500 text-black px-4 py-2 rounded-full hover:bg-lime-600">FAIRE UN PARTENARIAT</a>
         </nav>
            )}
       </header>
