@@ -67,7 +67,7 @@ const Signup = () => {
           </a>
           <nav className="flex space-x-4">
             <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
-            <a href="/products" className="text-black hover:text-lime-500 transition font-Raleway">Elevateur</a>
+            <a href="/products" className="text-black hover:text-lime-500 transition font-Raleway">Eleveurs</a>
             <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition">Nos Producteurs</a>
             <a href="/compte" className="text-lime-500 hover:text-lime-500 transition">Compte</a>
             <a href="/blog" className="text-black hover:text-lime-500 transition">Blog</a>

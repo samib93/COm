@@ -30,7 +30,7 @@ const Compte = () => {
           </a>
           <nav className="flex space-x-4">
             <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
-            <a href="/products" className="text-black hover:text-lime-500 transition font-Raleway">Elevateur</a>
+            <a href="/products" className="text-black hover:text-lime-500 transition font-Raleway">Eleveurs</a>
             <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition">Nos Producteurs</a>
             <a href="/compte" className="text-lime-500 hover:text-lime-500 transition">Compte</a>
             <a href="/blog" className="text-black hover:text-lime-500 transition">Blog</a>
@@ -46,7 +46,7 @@ const Compte = () => {
         <div className="md:hidden h-full bg-[#020F14]">
         <nav className="grid grid-rows-4">
         <a href="#about-us" className="px-4 text-white hover:text-lime-500 transition">À Propos</a>
-        <a href="/products" className="px-4 text-white hover:text-lime-500 transition font-Raleway">Elevateur</a>
+        <a href="/products" className="px-4 text-white hover:text-lime-500 transition font-Raleway">Eleveurs</a>
         <a href="/nos-producteurs" className="px-4 text-white hover:text-lime-500 transition font-Raleway">Nos producteurs</a>
         <a href="#contact" className="px-4 text-white hover:text-lime-500 transition">Contact</a>
         <a href="/blog" className="px-4 text-white hover:text-lime-500 transition">Blog</a>
