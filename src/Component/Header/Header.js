@@ -19,14 +19,14 @@ const Header = () => {
         <div className="hidden md:flex space-x-4 flex justify-between items-center">
           <img src={Logo} alt="Fresh Logo" className="h-5" />
           <nav className="flex space-x-4">
-            <a href="/products" className="text-black hover:text-lime-500 transition">Nos Produits</a>
-            <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
-            <a href="#contact" className="text-black hover:text-lime-500 transition">Contact</a>
-            <a href="/login" className="text-black hover:text-lime-500 transition">Compte</a>
-            <a href="/blog" className="text-black hover:text-lime-500 transition">Blog</a>
-            <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition">Nos producteurs</a>
+          <a href="#about-us" className="text-black hover:text-lime-500 transition font-Raleway">À Propos</a>
+            <a href="/products" className="text-black hover:text-lime-500 transition font-Raleway">Elevateur</a>
+            <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition font-Raleway">Nos producteurs</a>
+            <a href="#contact" className="text-black hover:text-lime-500 transition font-Raleway">Contact</a>
+            <a href="/blog" className="text-black hover:text-lime-500 transition font-Raleway">Blog</a>
+            <a href="/login" className="text-black hover:text-lime-500 transition font-Raleway">Compte</a>
           </nav>
-          <a href="/partanariat" className="bg-lime-500 text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
+          <a href="/partanariat" className="bg-[#D0E608] text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
         </div>
         <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-800 hover:text-gray-600 focus:outline-none">
@@ -34,21 +34,22 @@ const Header = () => {
             </button>
         </div>
         {isOpen && (
-        <div className="md:hidden h-full bg-white">
+        <div className="md:hidden h-full bg-[#020F14]">
           <nav className="grid grid-rows-4">
-            <a href="/nos-producteurs" className="px-4 text-black hover:text-lime-500 transition">Nos Produits</a>
-            <a href="#about-us" className="px-4 text-black hover:text-lime-500 transition">À Propos</a>
-            <a href="#contact" className="px-4 text-black hover:text-lime-500 transition">Contact</a>
-            <a href="/login" className="px-4 text-black hover:text-lime-500 transition">Compte</a>
-            <a href="/blog" className="px-4 text-black hover:text-lime-500 transition">Blog</a>
-            <a href="/partanariat" className="bg-lime-500 text-black px-4 py-2 rounded-full w-64 shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
+          <a href="#about-us" className="px-4 text-white hover:text-lime-500 transition">À Propos</a>
+          <a href="/products" className="px-4 text-white hover:text-lime-500 transition font-Raleway">Elevateur</a>
+          <a href="/nos-producteurs" className="px-4 text-white hover:text-lime-500 transition font-Raleway">Nos producteurs</a>
+          <a href="#contact" className="px-4 text-white hover:text-lime-500 transition">Contact</a>
+          <a href="/blog" className="px-4 text-white hover:text-lime-500 transition">Blog</a>
+            <a href="/login" className="px-4 text-white hover:text-lime-500 transition">Compte</a>
+            <a href="/partanariat" className="bg-[#D0E608] text-black px-4 py-2 rounded-full w-64 shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
           </nav>
         </div>
       )}
         {/* Main Content */}
         <div className="flex flex-col mb-20 items-start inline-block text-white mt-20 md:mt-0 mx-auto md:ml-0 md:mt-32">
-          <h1 className="text-4xl md:text-6xl flex font-bold mb-4">BIENVENUE SUR FRESH</h1>
-          <p className="text-lg md:text-xl mb-6">
+          <h1 className="text-4xl font-Florensa Regular-bold md:text-6xl flex mb-4 ">BIENVENUE SUR FRESH</h1>
+          <p className="text-lg font-Raleway md:text-xl mb-6 ">
             La solution pour accéder à des produits locaux en entreprise. Savourez la qualité. Vivez la fraîcheur.
           </p>
           <a href="/compte" className="bg-black text-white px-4 py-2 rounded-full shadow hover:bg-black-500 transition">Inscrivez-vous</a>

@@ -26,7 +26,7 @@ const Values = () => {
   return (
     <section className="py-12 place-items-center bg-white">
       <div className="container items-center mx-auto px-4">
-        <h1 className="text-3xl text-center mb-8">Les Valeurs</h1>
+        <h1 className="text-3xl text-center mb-8 font-Raleway">Les Valeurs</h1>
         <div className="flex hidden md:grid text-center grid grid-cols-1 items-center md:grid-cols-3 gap-16 sm:grid-cols-1">
           {values.map((value, index) => (
             <div key={index} className="bg-lime-100 p-6 rounded-lg shadow-lg">

@@ -14,8 +14,8 @@ const WhatWeOffer = () => {
                 <span className="bg-black text-white rounded-full px-3 py-1 text-sm font-semibold mr-2">Concept</span>
                 <span className="text-black rounded-full px-3 py-1 text-sm font-semibold">&#127811;</span>
               </div>
-              <h2 className="text-2xl font-bold mb-4">CE QU'ON PROPOSE.</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl  font-bold mb-4">CE QU'ON PROPOSE.</h2>
+              <p className="text-gray-700 mb-4 font-Raleway">
                 Nous mettons en relation les producteurs locaux et entreprises. Cette initiative permet aux salariés d'accéder facilement à des produits locaux de qualité.
               </p>
             </div>
@@ -28,7 +28,7 @@ const WhatWeOffer = () => {
           <div className="bg-black text-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:w-1/2">
             <div className="flex-grow">
               <div className="flex items-center mb-4">
-                <span className="bg-lime-500 text-black rounded-full px-3 py-1 text-sm font-semibold mr-2">Processus</span>
+                <span className="bg-[#D0E608] text-black rounded-full px-3 py-1 text-sm font-semibold mr-2">Processus</span>
               </div>
               <h2 className="text-2xl font-bold mb-4">CHOISISSEZ.</h2>
               <p className="mb-4">

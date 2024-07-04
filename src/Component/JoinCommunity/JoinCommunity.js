@@ -46,7 +46,7 @@ const JoinCommunity = () => {
             onChange={(e) => setEmail(e.target.value)}
             className="bg-black text-white items-center focus:outline-none"
           />
-          <button className="p-2 bg-white text-black rounded-full h-10 w-10 hover:bg-gray-800">✓</button>
+          <button className="p-2 bg-white text-black rounded-full h-10 w-10 hover:bg-[#D0E608]">✓</button>
           {/* <button className="text-white flex items-center">
             <FontAwesomeIcon icon={faCheckCircle} className="ml-1" />
           </button> */}

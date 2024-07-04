@@ -8,6 +8,10 @@ import { collection, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../../../firebase';
 import { doc, setDoc } from 'firebase/firestore';
+import facebook from "../../../assets/img/logo_facebook.png"
+import Instagram from '../../../assets/img/logo_instagram.png'
+import linkedin from '../../../assets/img/logo_likendin.png'
+import Twitter from '../../../assets/img/logo_Twitter.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -55,7 +59,7 @@ const Blog = () => {
 
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Header */}
       <header className="relative bg-cover bg-center h-screen rounded-b-2xl overflow-hidden" style={{ backgroundImage: `url(${BgBlog})` }}>
       <div className="absolute inset-0 bg-black opacity-0"></div>
@@ -67,11 +71,12 @@ const Blog = () => {
           </a>
           <nav className="flex space-x-4">
             <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
+            <a href="/products" className="text-black hover:text-lime-500 transition font-Raleway">Elevateur</a>
             <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition">Nos Producteurs</a>
             <a href="/compte" className="text-black hover:text-lime-500 transition">Compte</a>
-            {/* <a href="/blog" className="text-black hover:text-lime-500 transition">Blog</a> */}
+            <a href="/blog" className="text-lime-500 hover:text-lime-500 transition">Blog</a>
           </nav>
-          <a href="/partanariat" className="bg-lime-500 text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
+          <a href="/partanariat" className="bg-[#D0E608] text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
         </div>
         <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-800 hover:text-gray-600 focus:outline-none">
@@ -79,14 +84,17 @@ const Blog = () => {
             </button>
         </div>
         {isOpen && (
-        <div className="md:hidden h-full bg-white">
-          <nav className="grid grid-rows-4">
-            <a href="#about-us" className="text-black hover:text-lime-500 transition">À Propos</a>
-            <a href="/nos-producteurs" className="text-black hover:text-lime-500 transition">Nos Producteurs</a>
-            <a href="#compte" className="text-black hover:text-lime-500 transition">Compte</a>
-            <a href="/partanariat" className="bg-lime-500 text-black px-4 py-2 rounded-full w-64 shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
-          </nav>
-        </div>
+        <div className="md:hidden h-full bg-[#020F14]">
+        <nav className="grid grid-rows-4">
+        <a href="#about-us" className="px-4 text-white hover:text-lime-500 transition">À Propos</a>
+        <a href="/products" className="px-4 text-white hover:text-lime-500 transition font-Raleway">Elevateur</a>
+        <a href="/nos-producteurs" className="px-4 text-white hover:text-lime-500 transition font-Raleway">Nos producteurs</a>
+        <a href="#contact" className="px-4 text-white hover:text-lime-500 transition">Contact</a>
+        <a href="/blog" className="px-4 text-white hover:text-lime-500 transition">Blog</a>
+          <a href="/login" className="px-4 text-white hover:text-lime-500 transition">Compte</a>
+          <a href="/partanariat" className="bg-[#D0E608] text-black px-4 py-2 rounded-full w-64 shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
+        </nav>
+      </div>
       )}
         {/* Main Content */}
         <div className="flex flex-col mb-20 items-start inline-block text-white mt-20 md:mt-0 mx-auto md:ml-0 md:mt-32">
@@ -107,7 +115,7 @@ const Blog = () => {
       {/* Main Content */}
       <main className="container mx-auto p-4">
         {/* Intro Section */}
-        <section className="bg-gray-300 rounded-lg shadow-lg p-6 mb-8">
+        <section className="bg-[#F6F6F6] rounded-lg shadow-lg p-6 mb-8">
           <div className="md:flex items-center">
             <div className="md:w-2/3">
             <div className="flex items-center mb-4">
@@ -118,7 +126,7 @@ const Blog = () => {
               <p className="text-gray-700 mb-4">
                 Bienvenue sur notre blog culinaire dédié à la découverte et à la valorisation des produits locaux ! Notre mission est de vous inspirer à cuisiner de manière durable tout en soutenant l’économie locale. Plongez dans un univers gastronomique où chaque plat raconte une histoire de terroir et de tradition, et où chaque bouchée est un pas vers un mode de vie plus respectueux de l’environnement. Rejoignez-nous pour célébrer la richesse et la diversité des saveurs locales !
               </p>
-              <a href="#" className="absolute text-blue-500 hover:underline right-9_">voir plus</a>
+              <a href="#" className="absolute text-black underline right-9_">voir plus</a>
             </div>
             <div className="md:w-1/3 mt-4 md:mt-0">
               <img src={Famer} alt="Blog Intro" className="rounded-lg shadow-lg"/>
@@ -128,14 +136,14 @@ const Blog = () => {
 
         {/* Articles Section */}
         <section className="mb-8">
-          <h2 className="text-2xl text-center font-bold mb-4">Nos articles.</h2>
+          <h2 className="text-2xl text-center font-Raleway-bold mb-4">Nos articles.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {/* Article Cards */}
             {articles.map(article => (
               <Link to={`/details-article/${article.id}`}>
               <div key={article.id} className="bg-black break-words text-wrap text-white p-6 rounded-lg shadow-lg">
-                <span className="bg-yellow-400 text-black px-2 py-1 rounded">L'article</span>
-                <h3 className="text-xl font-bold mt-4">{article.title}</h3>
+                <span className="bg-[#D0E608] text-black px-2 py-1 rounded-full">L'article</span>
+                <h3 className="text-xl font-Florensa Regular-bold mt-4">{article.title}</h3>
                 <p className="grid grid-cols-2 gap-4 text-gray-300 mt-2">
                   <div className="col-start-1 col-end-3">
                   {article.description}
@@ -184,7 +192,7 @@ const Blog = () => {
             onChange={(e) => setEmail(e.target.value)}
             className="bg-black text-white items-center focus:outline-none"
           />
-          <button className="p-2 bg-white text-black rounded-full h-10 w-10 hover:bg-gray-800">✓</button>
+          <button className="p-2 bg-white text-black rounded-full h-10 w-10 hover:bg-[#D0E608]">✓</button>
           {/* <button className="text-white flex items-center">
             <FontAwesomeIcon icon={faCheckCircle} className="ml-1" />
           </button> */}
@@ -193,42 +201,57 @@ const Blog = () => {
     </section>
 
         {/* Footer */}
-        <footer className="bg-black text-white p-8">
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div>
-              <h3 className="font-bold mb-2">ASSISTANCE</h3>
+        <footer className="bg-black text-white py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+            <div className="mb-6 md:mb-0">
+              <h2 className="font-florensa text-3xl font-normal mb-4">Assistance</h2>
               <ul>
-                <li><a href="#" className="hover:underline">FAQ</a></li>
-                <li><a href="#" className="hover:underline">Contactez-nous</a></li>
-                <li><a href="#" className="hover:underline">Conseils pour votre sécurité</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">FAQ</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Contactez-nous</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Support technique</a></li>
               </ul>
             </div>
-            <div>
-              <h3 className="font-bold mb-2">À PROPOS DE</h3>
+            <div className="mb-6 md:mb-0">
+              <h2 className="font-florensa text-3xl font-normal mb-4">À propos de</h2>
               <ul>
-                <li><a href="#" className="hover:underline">À propos de nous</a></li>
-                <li><a href="#" className="hover:underline">Politique d'utilisation des cookies</a></li>
-                <li><a href="#" className="hover:underline">Politique de confidentialité</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">À propos de nous</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Politique de confidentialité</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Politique en matière de cookies</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Règlement général sur la protection des données</a></li>
               </ul>
             </div>
-            <div>
-              <h3 className="font-bold mb-2">CONDITIONS</h3>
+            <div className="mb-6 md:mb-0">
+              <h2 className="font-florensa text-3xl font-normal mb-4">Conditions</h2>
               <ul>
-                <li><a href="#" className="hover:underline">Conditions générales</a></li>
-                <li><a href="#" className="hover:underline">Condition de renouvellement automatique</a></li>
-                <li><a href="#" className="hover:underline">Politique de remboursement</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Conditions générales</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Conditions de facturation</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Politique de remboursement</a></li>
               </ul>
+            </div>
+            <div className="flex space-x-4 w-32 h-32">
+              <a href="#" className="mt-2 text-gray-400 hover:text-white">
+                <img src={facebook} alt="Facebook" />
+              </a>
+              <a href="#" className="mt-2 text-gray-400 hover:text-white">
+                <img src={Twitter} alt="Twitter" />
+              </a>
+              <a href="#" className="mt-2 text-gray-400 hover:text-white">
+                <img src={Instagram} alt="Instagram" />
+              </a>
+              <a href="#" className="mt-2 text-gray-400 hover:text-white">
+                <img src={linkedin} alt="LinkedIn" />
+              </a>
             </div>
           </div>
-          <div className="mt-8 text-center">
-            <a href="#" className="mx-2 hover:underline"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="mx-2 hover:underline"><i className="fab fa-instagram"></i></a>
-            <a href="#" className="mx-2 hover:underline"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="mx-2 hover:underline"><i className="fab fa-linkedin"></i></a>
+          <div className="text-center text-gray-400 mt-8">
+            &copy; 2024 FRESH. Tous droits réservés.
           </div>
-        </footer>
-      
+        </div>
+      </footer>
     </div>
+      
+    
   );
 };
 

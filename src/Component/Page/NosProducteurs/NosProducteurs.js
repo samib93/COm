@@ -10,6 +10,11 @@ import logo3 from '../../../assets/img/galileo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../../assets/img/logohead.png'
+import facebook from "../../../assets/img/logo_facebook.png"
+import Instagram from '../../../assets/img/logo_instagram.png'
+import linkedin from '../../../assets/img/logo_likendin.png'
+import Twitter from '../../../assets/img/logo_Twitter.png'
+
 
 const NosProducteurs = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,24 +69,34 @@ const NosProducteurs = () => {
           <img src={Logo} alt="Fresh Logo" className="h-5" />
           </a>
         </div>
-        <nav className="hidden md:flex space-x-4">
-          <a href="#a-propos" className="text-gray-800 hover:text-green-600">à propos</a>
-          <a href="nos-producteurs" className="text-gray-800 hover:text-green-600">nos producteurs</a>
-          <a href="/login" className="text-gray-800 hover:text-green-600">compte</a>
-          <a href="/partanariat" className="bg-lime-400 text-black px-4 py-2 rounded-full hover:bg-lime-600">FAIRE UN PARTENARIAT</a>
-        </nav>
+        <div className="hidden md:flex space-x-4 flex justify-between items-center">
+          <nav className="flex space-x-4">
+          <a href="#about-us" className="text-black hover:text-lime-500 transition font-Raleway">À Propos</a>
+            <a href="/products" className="text-black hover:text-lime-500 transition font-Raleway">Elevateur</a>
+            <a href="/nos-producteurs" className="text-lime-500 hover:text-lime-500 transition font-Raleway">Nos producteurs</a>
+            <a href="#contact" className="text-black hover:text-lime-500 transition font-Raleway">Contact</a>
+            <a href="/blog" className="text-black hover:text-lime-500 transition">Blog</a>
+            <a href="/login" className="text-black hover:text-lime-500 transition font-Raleway">Compte</a>
+          </nav>
+          <a href="/partanariat" className="bg-[#D0E608] text-black px-4 py-2 rounded-full shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
+        </div>
         <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-800 hover:text-gray-600 focus:outline-none">
               <FontAwesomeIcon icon={isOpen ? faTimes : faBars} size="lg" />
             </button>
         </div>
         {isOpen && (
-        <nav className="md:hidden h-full bg-white grid grid-rows-4">
-          <a href="#a-propos" className="text-gray-800 hover:text-green-600">à propos</a>
-          <a href="nos-producteurs" className="text-gray-800 hover:text-green-600">nos producteurs</a>
-          <a href="/login" className="text-gray-800 hover:text-green-600">compte</a>
-          <a href="/partanariat" className="bg-lime-400 text-black px-4 py-2 rounded-full hover:bg-lime-600">FAIRE UN PARTENARIAT</a>
+        <div className="md:hidden h-full bg-[#020F14]">
+        <nav className="grid grid-rows-4">
+        <a href="#about-us" className="px-4 text-white hover:text-lime-500 transition">À Propos</a>
+        <a href="/products" className="px-4 text-white hover:text-lime-500 transition font-Raleway">Elevateur</a>
+        <a href="/nos-producteurs" className="px-4 text-white hover:text-lime-500 transition font-Raleway">Nos producteurs</a>
+        <a href="#contact" className="px-4 text-white hover:text-lime-500 transition">Contact</a>
+        <a href="/blog" className="px-4 text-white hover:text-lime-500 transition">Blog</a>
+          <a href="/login" className="px-4 text-white hover:text-lime-500 transition">Compte</a>
+          <a href="/partanariat" className="bg-[#D0E608] text-black px-4 py-2 rounded-full w-64 shadow hover:bg-lime-500 transition">Faire un Partenariat</a>
         </nav>
+      </div>
            )}
       </header>
 
@@ -93,7 +108,7 @@ const NosProducteurs = () => {
             <h2 className="text-3xl font-bold">{producer.name}</h2>
             <p className="text-gray-600">{producer.membershipInfo}</p>
             <p className="mt-4">{producer.description}</p>
-            <a href="/partanariat" className="mt-4 inline-block bg-lime-400 text-black px-6 py-3 rounded-full">Faire un partenariat</a>
+            <a href="/partanariat" className="mt-4 inline-block bg-[#D0E608] text-black px-6 py-3 rounded-full">Faire un partenariat</a>
             <p className="mt-4">{producer.description}</p>
           </div>
           <div className="md:w-1/2 grid grid-rows-3 grid-flow-col gap-4">
@@ -108,7 +123,7 @@ const NosProducteurs = () => {
           <h3 className="text-2xl">Engagements et Pratiques</h3>
           <div className="flex flex-wrap gap-4 mt-4">
             {producer.engagements.map((engagement, index) => (
-              <span key={index} className="bg-gray-800 text-white px-4 py-2 rounded-full">{engagement}</span>
+              <span key={index} className="bg-black text-white px-4 py-2 rounded-full">{engagement}</span>
             ))}
           </div>
         </section>
@@ -116,7 +131,7 @@ const NosProducteurs = () => {
         {/* Products */}
         <section className="mb-5 flex flex-col md:flex-row gap-6">
           <div className="md:w-2/3">
-            <h3 className="text-2xl">Produits Disponibles</h3>
+            <h3 className="text-2xl mt-8">Produits Disponibles</h3>
             <ul className="mt-4">
               {producer.products.map((product, index) => (
                 <li key={index} className="mt-2">{product}</li>
@@ -130,10 +145,10 @@ const NosProducteurs = () => {
 
         {/* Testimonials */}
         <section className="mt-10">
-          <h3 className="text-2xl">Ils témoignent</h3>
+          <h3 className="text-2xl font-raleway">Ils témoignent</h3>
           <div className="grid grid-cols-3 gap-3 mt-4">
             {producer.testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-yellow-100 p-6 rounded-lg shadow-lg w-full md:w-2/2 flex flex-col justify-envenly">
+              <div key={index} className="bg-[#F4FBD2] p-6 rounded-lg shadow-lg w-full md:w-2/2 flex flex-col justify-envenly">
                 <p className="mb-4">{testimonial.text}</p>
                 <div className="flex items-center">
                   <div className="ml-4 flex-grow">
@@ -159,31 +174,51 @@ const NosProducteurs = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white p-6">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h4 className="font-bold">ASSISTANCE</h4>
-            <ul className="mt-4 space-y-2">
-              <li><a href="/faq" className="text-gray-400">FAQ</a></li>
-              <li><a href="/contact" className="text-gray-400">Contactez-nous</a></li>
-              <li><a href="/safety" className="text-gray-400">Conseils pour votre sécurité</a></li>
-            </ul>
+      <footer className="bg-black text-white py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+            <div className="mb-6 md:mb-0">
+              <h2 className="font-florensa text-3xl font-normal mb-4">Assistance</h2>
+              <ul>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">FAQ</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Contactez-nous</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Support technique</a></li>
+              </ul>
+            </div>
+            <div className="mb-6 md:mb-0">
+              <h2 className="font-florensa text-3xl font-normal mb-4">À propos de</h2>
+              <ul>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">À propos de nous</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Politique de confidentialité</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Politique en matière de cookies</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Règlement général sur la protection des données</a></li>
+              </ul>
+            </div>
+            <div className="mb-6 md:mb-0">
+              <h2 className="font-florensa text-3xl font-normal mb-4">Conditions</h2>
+              <ul>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Conditions générales</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Conditions de facturation</a></li>
+                <li><a href="#" className="font-raleway text-gray-400 hover:text-white">Politique de remboursement</a></li>
+              </ul>
+            </div>
+            <div className="flex space-x-4 w-32 h-32">
+              <a href="#" className="mt-2 text-gray-400 hover:text-white">
+                <img src={facebook} alt="Facebook" />
+              </a>
+              <a href="#" className="mt-2 text-gray-400 hover:text-white">
+                <img src={Twitter} alt="Twitter" />
+              </a>
+              <a href="#" className="mt-2 text-gray-400 hover:text-white">
+                <img src={Instagram} alt="Instagram" />
+              </a>
+              <a href="#" className="mt-2 text-gray-400 hover:text-white">
+                <img src={linkedin} alt="LinkedIn" />
+              </a>
+            </div>
           </div>
-          <div>
-            <h4 className="font-bold">À PROPOS DE</h4>
-            <ul className="mt-4 space-y-2">
-              <li><a href="/about" className="text-gray-400">À propos de nous</a></li>
-              <li><a href="/cookies" className="text-gray-400">Politique d'utilisation des cookies</a></li>
-              <li><a href="/privacy" className="text-gray-400">Politique de confidentialité</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold">CONDITIONS</h4>
-            <ul className="mt-4 space-y-2">
-              <li><a href="/terms" className="text-gray-400">Conditions générales</a></li>
-              <li><a href="/renewal" className="text-gray-400">Condition de renouvellement automatique</a></li>
-              <li><a href="/refund" className="text-gray-400">Politique de remboursement</a></li>
-            </ul>
+          <div className="text-center text-gray-400 mt-8">
+            &copy; 2024 FRESH. Tous droits réservés.
           </div>
         </div>
       </footer>
